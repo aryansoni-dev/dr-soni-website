@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --charcoal: #111827;
+  --navy: #0d1b2a;
+  --navy-light: #1b263b;
+  --cream: #FAF7F2;
+  --white: #ffffff;
+}
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "DM Mono", monospace;
+  
+  --color-charcoal: var(--charcoal);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-gold: #D4AF37;
+  --color-cream: var(--cream);
+  --color-white: var(--white);
+  --color-gold-light: #E5C35E;
+  --color-gold-dark: #B59325;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom scrollbar to match the premium theme with navy track and gold thumb */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-navy);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-light);
+}
+
+/* Premium gradient overlay for standard containers or headings */
+.gold-gradient-accent {
+  background: linear-gradient(90deg, var(--color-gold-dark), var(--color-gold), var(--color-gold-light), transparent);
+}
+
+/* Base Shadow class conforming to 0 4px 24px rgba(0,0,0,0.08) */
+.shadow-premium {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08) !important;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.shadow-premium:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Premium 3px gold border expansion animation on hover */
+.btn-premium-border {
+  position: relative;
+  overflow: visible !important;
+}
+
+.btn-premium-border::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border: 3px solid #D4AF37;
+  border-radius: inherit;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.btn-premium-border:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Simple fadeIn keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Infinte auto-scrolling marquee keyframes and classes */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
+

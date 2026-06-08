@@ -1,0 +1,6 @@
+{
+  "name": "Dr. J Soni - Life Advisor",
+  "description": "Premium Life Advisor & Insurance Consultant website for Dr. J Soni, securing lives and building futures.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
